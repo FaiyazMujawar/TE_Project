@@ -35,20 +35,20 @@ public class CoordinatorController {
 
     /* REGISTRARS */
 
-    @GetMapping("/{eventId}/registrars")
+    /* @GetMapping("/{eventId}/registrars")
     public List<User> getAllRegistrars(@PathVariable int eventId) {
         return userService.getAllUsersOnEvent(3, eventId);
-    }
+    } */
 
     @GetMapping("/{eventId}/registrars/{userId}")
     public Optional<User> getRegistrar(@PathVariable int userId) {
-        return userService.getUser(userId);
+        return userService.getUser(3,userId);
     }
 
     @PostMapping("/{eventId}/registrars/add")
     public void addRegistrar(@RequestBody UserDetails newReg,@PathVariable int eventId) {
         newReg.eventId = eventId;
-        userService.addUser(new User(newReg.id,newReg.username,newReg.fname,newReg.mname,newReg.lname,newReg.email,newReg.password,newReg.cont,2,newReg.eventId));
+        userService.addUser(new User(newReg.id,newReg.username,newReg.fname,newReg.mname,newReg.lname,newReg.email,newReg.password,newReg.cont,3,newReg.eventId));
     }
     
     @PutMapping("/{eventId}/registrars/{id}")

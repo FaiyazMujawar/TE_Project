@@ -27,10 +27,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
 
     @Autowired
-    private UserService userService;
+    public UserService userService;
 
     @Autowired
-    private EventService eventService;
+    public EventService eventService;
 
 /* EVENTS: */
 
@@ -46,7 +46,7 @@ public class AdminController {
 
     @PutMapping("/events/{eventId}")
     public void updateEvent(@RequestBody Event event, @PathVariable int eventId) {
-        event.event_id = eventId;
+        event.id = eventId;
         eventService.updateEvent(event);
     }
 
@@ -71,7 +71,7 @@ public class AdminController {
 
     @GetMapping("/co-ordinators/{coId}")
     public Optional<User> getCoordinator(@PathVariable int coId) {
-        return userService.getUser(coId);
+        return userService.getUser(2,coId);
     }
 
     @PutMapping("/co-ordinators/{coId}")
@@ -94,6 +94,6 @@ public class AdminController {
 
     @GetMapping("/registrars/{userId}")
     public Optional<User> getUser(@PathVariable int userId) {
-        return userService.getUser(userId);
+        return userService.getUser(3,userId);
     }
 }

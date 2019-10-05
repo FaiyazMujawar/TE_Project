@@ -11,5 +11,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface ParticipantRepository extends JpaRepository<Participant,Integer>{
 
-    public List<Participant> findByEventId(int eventId);
+    public List<Participant> findByeventsId(int eventId);
 }

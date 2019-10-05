@@ -63,6 +63,9 @@ public class Participant {
         this.events.add(new Event(eventId, "", ""));
     }
 
+    public Participant() {
+    }
+
     public int getId() {
         return id;
     }
@@ -117,7 +120,6 @@ public class Participant {
 
     public void setEvents(Set<Event> events) {
         this.events = events;
-    }
-    
+    } 
     
 }

@@ -12,7 +12,7 @@ public class Event {
 
     @Id
     @Column(name = "event_id")
-    public int event_id;
+    public int id;
 
     @Column(name = "name")
     public String name;
@@ -21,7 +21,7 @@ public class Event {
     public String description;
 
     public Event(int event_id, String name, String description) {
-        this.event_id = event_id;
+        this.id = event_id;
         this.name = name;
         this.description = description;
     }
@@ -29,12 +29,12 @@ public class Event {
     public Event()
     {}
     
-    public int getEvent_id() {
-        return event_id;
+    public int getId() {
+        return id;
     }
 
-    public void setEvent_id(int event_id) {
-        this.event_id = event_id;
+    public void setId(int event_id) {
+        this.id = event_id;
     }
 
     public String getName() {

@@ -23,7 +23,7 @@ public class ParticipantService {
     }
 
     public List<Participant> getAllParticipantsOnEvent(int eventId) {
-        return participantRepository.findByEventId(eventId);
+        return participantRepository.findByeventsId(eventId);
     }
 
     public Optional<Participant> getParticipant(int id) {

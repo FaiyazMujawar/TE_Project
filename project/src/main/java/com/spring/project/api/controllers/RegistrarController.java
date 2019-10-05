@@ -21,7 +21,7 @@ public class RegistrarController {
     @Autowired
     private ParticipantService participantService;
 
-    @PostMapping("/{eventId}/registrar/add")
+    @PostMapping("/{eventId}/participants/add")
     public void addParticipant(@RequestBody ParticipantDetails participant, @PathVariable int eventId) {
         participantService.addParticipant(new Participant(participant.id, participant.fname, participant.mname, participant.lname, participant.email, participant.contact, eventId));
     }

@@ -22,8 +22,8 @@ public class UserService {
         return userRepository.findByrolesId(roleId);
     }
 
-    public Optional<User> getUser(int id) {
-        return userRepository.findById(id);
+    public Optional<User> getUser(int id,int roleId) {
+        return userRepository.findByrolesIdAndId(id,roleId);
     }
 
     public void addUser(User user) {
@@ -38,7 +38,7 @@ public class UserService {
         userRepository.deleteById(userId);
     }
 
-    public List<User> getAllUsersOnEvent(int roleId,int eventId) {
-        return userRepository.findByrolesIdAndEventevent_id(roleId,eventId);
-    }
+    /* public List<User> getAllUsersOnEvent(int roleId,int eventId) {                   <- Here is the error!!
+        return userRepository.findByeventsIdAndrolesId(eventId, roleId);
+    } */
 }
